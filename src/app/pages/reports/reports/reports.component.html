@@ -4,10 +4,7 @@
 
 <app-page-header 
   page-title="Relatório de receitas e despesas"
-  [showButton]="false"
-  button-text=""
-  button-link=""
-  button-class=""
+  [show-button]="false"
 ></app-page-header>
 
 <div class="card">
@@ -68,18 +65,18 @@
     </div>
     <div class="card-body">
       <h3 class="card-title">
-        1500
+        {{revenueTotal}}
       </h3>
     </div>
   </div>
 
   <div class="card text-center text-white bg-danger">
     <div class="card-header">
-      Tolta de despesas
+      {{expenseTotal}}
     </div>
     <div class="card-body">
       <h3 class="card-title">
-        500
+        {{balance}}
       </h3>
     </div>
   </div>
@@ -100,10 +97,10 @@
 
 <div class="row mt-5 mb-4">
   <div class="col-md-6">
-    Gráfico de receitas
+    <p-chart type="bar" [data]="revenueChartData" [options]="chartOptions"></p-chart>
   </div>
 
   <div class="col-md-6">
-    Gráfico de despesas
+    <p-chart type="bar" [data]="expenseChartData" [options]="chartOptions"></p-chart>
   </div>
 </div>
